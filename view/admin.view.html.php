@@ -17,12 +17,16 @@ if(!isset($_SESSION['user_login'])){
 <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm mb-4">
     <div class="container">
         <a class="navbar-brand fw-bold" href="./">MVC-2025</a>
-        <div>
-            <a class="nav-link d-inline px-2" href="./">Accueil</a>
-            <a class="nav-link d-inline px-2" href="./?p=about">À propos</a>
-            <a class="nav-link d-inline p-2 active" href="./?p=admin">Administration</a>
-            <a class="nav-link d-inline px-2 text-danger" href="./?p=disconnect">Déconnexion</a>
-            <span class="text-muted small">| Connecté : <?=$_SESSION['user_login']?></span>
+        <div class="navbar-nav">
+            <a class="nav-link <?= !isset($_GET['p']) ? 'active' : '' ?>" href="./">Accueil</a>
+            <a class="nav-link <?= (isset($_GET['p']) && $_GET['p'] === 'about') ? 'active' : '' ?>" href="./?p=about">À propos</a>
+            <a class="nav-link <?= (isset($_GET['p']) && $_GET['p'] === 'admin') ? 'active text-primary' : '' ?>" href="./?p=admin">Administration</a>
+            <a class="nav-link text-danger" href="./?p=disconnect">Déconnexion</a>
+            <span class="nav-link text-muted">|</span>
+            <span class="text-muted small ms-3">
+                Connecté : <?=$_SESSION['user_login']?><br>
+                <small>(<?=$_SESSION['user_role']?>)</small>
+            </span>
         </div>
     </div>
 </nav>

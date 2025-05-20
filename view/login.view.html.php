@@ -19,10 +19,10 @@ if (isset($_SESSION['user_login'])) {
 <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm mb-4">
     <div class="container">
         <a class="navbar-brand fw-bold" href="./">MVC-2025</a>
-        <div>
-            <a class="nav-link d-inline px-2" href="./">Accueil</a>
-            <a class="nav-link d-inline px-2" href="./?p=about">À propos</a>
-            <span class="nav-link d-inline px-2 active">Connexion</span>
+        <div class="navbar-nav">
+            <a class="nav-link <?= !isset($_GET['p']) ? 'active' : '' ?>" href="./">Accueil</a>
+            <a class="nav-link <?= (isset($_GET['p']) && $_GET['p'] === 'about') ? 'active' : '' ?>" href="./?p=about">À propos</a>
+            <a class="nav-link <?= (isset($_GET['p']) && $_GET['p'] === 'connect') ? 'active text-primary' : '' ?>" href="./?p=connect">Connexion</a>
         </div>
     </div>
 </nav>
