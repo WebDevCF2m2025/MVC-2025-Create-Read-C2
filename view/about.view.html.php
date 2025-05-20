@@ -10,20 +10,26 @@
 <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm mb-4">
     <div class="container">
         <a class="navbar-brand fw-bold" href="./">MVC-2025</a>
-        <div class="navbar-nav">
-            <a class="nav-link p-2 <?= !isset($_GET['p']) ? 'active' : '' ?>" href="./">Accueil</a>
-            <a class="nav-link p-2 <?= (isset($_GET['p']) && $_GET['p'] === 'about') ? 'active text-primary' : '' ?>" href="./?p=about">À propos</a>
-            <?php if(isset($_SESSION['user_login'])): ?>
-                <a class="nav-link p-2 <?= (isset($_GET['p']) && $_GET['p'] === 'admin') ? 'active' : '' ?>" href="./?p=admin">Administration</a>
-                <a class="nav-link p-2 text-danger" href="./?p=disconnect">Déconnexion</a>
-                <span class="nav-link text-muted">|</span>
-                <span class="text-muted small ms-3">
-                    Connecté : <?=$_SESSION['user_login']?><br>
-                    <small>(<?=$_SESSION['user_role']?>)</small>
-                </span>
-            <?php else: ?>
-                <a class="nav-link px-2 <?= (isset($_GET['p']) && $_GET['p'] === 'connect') ? 'active' : '' ?>" href="./?p=connect">Connexion</a>
-            <?php endif; ?>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Ouvrir le menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link <?= !isset($_GET['p']) ? 'active' : '' ?>" href="./">Accueil</a>
+                <a class="nav-link <?= (isset($_GET['p']) && $_GET['p'] === 'about') ? 'active text-primary' : '' ?>" href="./?p=about">À propos</a>
+                <?php if(isset($_SESSION['user_login'])): ?>
+                    <a class="nav-link <?= (isset($_GET['p']) && $_GET['p'] === 'admin') ? 'active' : '' ?>" href="./?p=admin">Administration</a>
+                    <a class="nav-link text-danger" href="./?p=disconnect">Déconnexion</a>
+                    <span class="nav-link text-muted d-none d-lg-inline">|</span>
+                    <span class="nav-link text-muted d-none d-sm-inline"><hr></span>
+                    <span class="text-muted small">
+                        Connecté : <?=$_SESSION['user_login']?><br>
+                        <small>(<?=$_SESSION['user_role']?>)</small>
+                    </span>
+                <?php else: ?>
+                    <a class="nav-link <?= (isset($_GET['p']) && $_GET['p'] === 'connect') ? 'active' : '' ?>" href="./?p=connect">Connexion</a>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </nav>
@@ -42,5 +48,7 @@
         <p>En outre, le CF2m est doté d’un pôle recherche et développement dans le secteur environnemental pour l’accès aux ressources et à l’entreprenariat social.</p>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

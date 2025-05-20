@@ -14,22 +14,29 @@ if(!isset($_SESSION['user_login'])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-<nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm mb-4">
+<div class="navbar navbar-expand-lg bg-white border-bottom shadow-sm mb-4">
     <div class="container">
         <a class="navbar-brand fw-bold" href="./">MVC-2025</a>
-        <div class="navbar-nav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Ouvrir le menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+        <div class="navbar-nav ms-auto">
             <a class="nav-link <?= !isset($_GET['p']) ? 'active' : '' ?>" href="./">Accueil</a>
             <a class="nav-link <?= (isset($_GET['p']) && $_GET['p'] === 'about') ? 'active' : '' ?>" href="./?p=about">À propos</a>
             <a class="nav-link <?= (isset($_GET['p']) && $_GET['p'] === 'admin') ? 'active text-primary' : '' ?>" href="./?p=admin">Administration</a>
             <a class="nav-link text-danger" href="./?p=disconnect">Déconnexion</a>
-            <span class="nav-link text-muted">|</span>
-            <span class="text-muted small ms-3">
+            <span class="nav-link text-muted d-none d-lg-inline">|</span>
+            <span class="nav-link text-muted d-none d-sm-inline"><hr></span>
+            <span class="text-muted small">
                 Connecté : <?=$_SESSION['user_login']?><br>
                 <small>(<?=$_SESSION['user_role']?>)</small>
             </span>
         </div>
+        </div>
     </div>
-</nav>
+</div>
+</>
 
 <h1 class="mb-4 text-center">MVC-2025 : Create-Read | Accueil de l'administration</h1>
 <div class="container">
@@ -55,5 +62,6 @@ if(!isset($_SESSION['user_login'])){
         </form>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
