@@ -34,7 +34,7 @@ if (isset($_SESSION['user_login'])) {
 <h1 class="mb-4 text-center">MVC-2025 : Create-Read | Connexion à l'administration</h1>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-5">
+        <div class="col-lg-8">
             <div class="bg-white rounded shadow-sm p-4">
                 <?php if (isset($error)) : ?>
                     <div class="alert alert-danger text-center"><?=$error?></div>
