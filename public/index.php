@@ -5,12 +5,24 @@
  * Contrôleur frontal
  */
 
+// Création de la session
 session_start();
 
 // dépendances
 require_once "../config-dev.php";
 
 // notre connexion PDO
+try{
+    // instanciation de PDO
+    $db = new PDO(DB_DSN,DB_LOGIN,DB_PWD);
+    // par défaut, on obtient des tableaux associatifs
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
+    // on active l'affichage des erreurs
+    $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+}catch(Exception $e){
+    die($e->getMessage());
+}
 
 // ici nos contrôleurs
 
@@ -25,3 +37,4 @@ var_dump($_POST);
 
 
 // bonne pratique
+$db = null;
