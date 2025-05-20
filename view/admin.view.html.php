@@ -38,7 +38,6 @@ if(!isset($_SESSION['user_login'])){
         </div>
     </div>
 </div>
-</>
 
 <h1 class="mb-4 text-center">MVC-2025 : Create-Read | Accueil de l'administration</h1>
 <div class="container">
