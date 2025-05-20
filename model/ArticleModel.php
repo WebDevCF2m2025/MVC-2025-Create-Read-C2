@@ -3,7 +3,7 @@
 function getAllArticle(PDO $con):array
 {
     $sql = "
-    SELECT a.`idarticle`, a.`article_title`, a.`article_text`, a.`article_date_created`, a.`article_date_published` , u.`user_name`
+    SELECT a.`idarticle`, a.`article_title`, a.`article_text`, a.`article_date_created`, a.`article_date_published` , u.`user_name`, u.`user_role`
     FROM `article` a
     INNER JOIN `user` u ON u.`iduser` = a.`user_iduser`
     WHERE a.`article_is_published` = 1    

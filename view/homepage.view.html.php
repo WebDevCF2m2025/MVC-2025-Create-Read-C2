@@ -45,7 +45,7 @@
                 <h4 class="mb-2"><?=$article['article_title']?></h4>
                 <p class="mb-1"><?=substr($article['article_text'],0,200)?>...<a class="link-secondary" href="#"> Lire la suite</a></p>
                 <div class="text-muted small">
-                    Publié le <?= dateFR($article['article_date_published'])?> par <?=$article['user_name']?>
+                    Publié le <?= dateFR($article['article_date_published'])?> par <?=$article['user_name']?> (<?=$article['user_role']?>)
                 </div>
             </div>
         <?php endforeach; ?>
