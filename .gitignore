@@ -4,4 +4,3 @@
 config-prod.php
 # protection du fichier de configuration de tests
 config-test.php
-
