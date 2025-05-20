@@ -30,7 +30,7 @@ INSERT INTO `article`
     $titre = htmlspecialchars(strip_tags(trim($titre)),ENT_QUOTES);
     $text = htmlspecialchars(strip_tags(trim($text)),ENT_QUOTES);
 
-    if(empty($titre)|| strlen($titre)> 160 || empty($text)) return false;
+    if(empty($titre)|| strlen($titre)> 120 || empty($text)) return false;
 
     $prepare = $con->prepare($sql);
     try{

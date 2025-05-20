@@ -12,7 +12,7 @@
     <div class="container">
         <a class="navbar-brand fw-bold" href="./">MVC-2025</a>
         <div>
-            <a class="nav-link d-inline p-2" href="./">Accueil</a>
+            <a class="nav-link d-inline p-2 active" href="./">Accueil</a>
             <a class="nav-link d-inline p-2" href="./?p=about">À propos</a>
             <?php if(isset($_SESSION['user_login'])): ?>
                 <a class="nav-link d-inline p-2" href="./?p=admin">Administration</a>

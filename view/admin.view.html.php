@@ -20,7 +20,7 @@ if(!isset($_SESSION['user_login'])){
         <div>
             <a class="nav-link d-inline px-2" href="./">Accueil</a>
             <a class="nav-link d-inline px-2" href="./?p=about">À propos</a>
-            <span class="nav-link d-inline px-2 active">Administration</span>
+            <a class="nav-link d-inline p-2 active" href="./?p=admin">Administration</a>
             <a class="nav-link d-inline px-2 text-danger" href="./?p=disconnect">Déconnexion</a>
             <span class="text-muted small">| Connecté : <?=$_SESSION['user_login']?></span>
         </div>
