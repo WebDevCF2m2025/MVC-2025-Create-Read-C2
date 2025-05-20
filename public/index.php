@@ -24,6 +24,9 @@ try{
     die($e->getMessage());
 }
 
+// chargement du routeur public
+require_once "../controller/PublicController.php";
+
 // ici nos contrôleurs
 
 echo '<h4>session_id() ou SID</h4>';
