@@ -41,3 +41,12 @@ INSERT INTO `article`
     }
 
 }
+
+function dateFR(string $datetime): string
+{
+    // Temps unix en seconde de la date venant de la db
+    $stringtotime = strtotime($datetime);
+
+    // Retour de la date au format
+    return date("d/m/Y \à H\hi",$stringtotime);
+}
