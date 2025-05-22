@@ -2,8 +2,8 @@
 # exemple5MVC/controller/PublicController.php
 
 // dépendances
-require_once "../model/UserModel.php";
-require_once "../model/ArticleModel.php";
+require_once "../model/userModel.php";
+require_once "../model/articleModel.php";
 
 if(isset($_GET['p'])){
   switch ($_GET['p']){

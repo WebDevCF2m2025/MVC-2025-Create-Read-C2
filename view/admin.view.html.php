@@ -64,10 +64,10 @@ if(isset($error)):
 <?php
 endif;
 ?>
-<form action="" method="post" name="article">
+<form method="post" name="article">
   <input type="text" name="article_title" placeholder="titre" maxlength="160" required><br>
   <textarea name="article_text" placeholder="votre texte" required></textarea><br>
-  <input type="checkbox" name="article_is_publish" value="1">Publier l'article<br>
+  <input type="checkbox" name="article_is_published" value="1">Publier l'article<br>
   <input type="submit" value="Envoyer">
 </form>
 </div>

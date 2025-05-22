@@ -27,8 +27,8 @@ if(isset($_SESSION['user_login'])) {
   require_once "../controller/PublicController.php";
 }
 
-// ici nos contrôleurs
-//
+ #ici nos contrôleurs
+
 //echo '<h4>session_id() ou SID</h4>';
 //var_dump(session_id());
 //echo '<h4>$_GET</h4>';

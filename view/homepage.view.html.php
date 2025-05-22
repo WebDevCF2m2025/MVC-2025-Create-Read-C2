@@ -63,7 +63,7 @@ else:
     ?>
     <h4><?=$article['article_title']?></h4>
     <p><?=substr($article['article_text'],0,200)?> ... lire la suite</p>
-    <h5>Ecrit le <?=$article['article_date_created']?> par <?=$article['user_iduser']?></h5>
+    <h5>Ecrit le <?=$article['article_date_published']?> par <?=$article['user_name']?></h5>
     <hr>
   <?php
   endforeach;

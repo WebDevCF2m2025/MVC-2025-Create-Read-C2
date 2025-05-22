@@ -31,9 +31,9 @@ if(isset($error)):
 endif;
 ?>
 <form action="" name="connect" method="post">
-  <input type="text" name="user_login" placeholder="Votre login" required><br>
+  <input type="text" class="" name="user_login" placeholder="Votre login" required><br>
   <input type="password" name="user_pwd" placeholder="Votre mot de passe" required><br>
-  <input type="submit" value="se connecter">
+  <input type="submit" class="" value="se connecter">
 </form>
 </body>
 </html>

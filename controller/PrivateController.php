@@ -2,8 +2,8 @@
 # exemple5MVC/controller/PrivateController.php
 
 // dépendances
-require_once "../model/UserModel.php";
-require_once "../model/ArticleModel.php";
+require_once "../model/userModel.php";
+require_once "../model/articleModel.php";
 
 if(isset($_GET['p'])){
   switch ($_GET['p']){
@@ -19,8 +19,8 @@ if(isset($_GET['p'])){
       $iduser = (int) $_SESSION['iduser'];
       if(isset($_POST['article_title'],$_POST['article_text'])){
         $isPublish = isset($_POST['article_is_published']) ? 1 : 0;
-
-        $insert = insertArticle($db, $_POST['article_title'], $_POST['article_text'], $iduser, $isPublish);
+        $datePublished = date("Y-m-d H:i:s");
+        $insert = insertArticle($db, $_POST['article_title'], $_POST['article_text'], $iduser, $isPublish,$datePublished);
 
         if($insert===true){
           header("Location: ./");
