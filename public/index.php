@@ -7,7 +7,7 @@
 
 session_start();
 
-// dépendances
+// configuration
 require_once "../config-dev.php";
 
 // notre connexion PDO
