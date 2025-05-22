@@ -11,8 +11,21 @@ session_start();
 require_once "../config-dev.php";
 
 // notre connexion PDO
+try{
+    // instanciation de PDO
+    $db = new PDO(DB_DSN,DB_LOGIN,DB_PWD,
+    [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+    ]);
 
-// ici nos contrôleurs
+
+}catch(Exception $e){
+    die($e->getMessage());
+}
+
+// Chargement de notre routeur
+require_once "../controller/RouterController.php";
 
 echo '<h4>session_id() ou SID</h4>';
 var_dump(session_id());
