@@ -2,6 +2,7 @@
 
 // appel des dépendances
 include "../model/ArticleModel.php";
+include "../model/UserModel.php";
 
 // pages communes à private et public
 if(!isset($_GET['p'])){
@@ -10,7 +11,8 @@ if(!isset($_GET['p'])){
     // appel de la vue
     include "../view/homepage.html.php";
 }elseif ($_GET['p']==='about'){
-
+    // appel de la vue
+    include "../view/about.html.php";
 }
 
 // si nous sommes connectés

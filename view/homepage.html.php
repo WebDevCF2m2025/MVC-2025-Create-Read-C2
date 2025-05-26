@@ -1,5 +1,5 @@
 <?php
-# public/index.php
+# view/homepage.html.php
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,27 +50,10 @@
             <h1 class="sitename">Classe2</h1>
         </a>
 
-        <nav id="navmenu" class="navmenu">
-            <ul>
-                <li><a href="./" class="active">Accueil<br></a></li>
-                <li><a href="./?p=about">A propos</a></li>
-              <!--  <li><a href="./?p=team">L'équipe</a></li>
-                <li class="dropdown"><a href="#"><span>Rubriques</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="#">Dropdown 1</a></li>
-                        <li><a href="#">Dropdown 2</a></li>
-                        <li><a href="#">Dropdown 3</a></li>
-                        <li><a href="#">Dropdown 4</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="#contact">Contact</a></li>
-                -->
-            </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
-
-        <a class="btn-getstarted flex-md-shrink-0" href="./?p=connect">Connexion</a>
+        <?php
+        // menu
+        include "_menu.html.php";
+        ?>
 
     </div>
 </header>
@@ -116,7 +99,7 @@
         <div class="row">
 
             <div class="col-lg-8">
-                
+
 
                 <!-- Blog Posts Section -->
                 <section id="blog-posts" class="blog-posts section">
