@@ -7,12 +7,14 @@ function getArticles (PDO $connection, bool $publish = true): array
 {
     // si publié
     $isPublish = $publish? "WHERE a.article_is_published = 1" : "";
+
     $sql = "
     SELECT a.*, u.user_name
         FROM article a
         INNER JOIN user u
             ON u.iduser = a.user_iduser
         $isPublish
+        # AND a.idarticle=1
     ORDER BY a.article_date_published DESC,
              a.article_date_created DESC;
     ;
