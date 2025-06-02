@@ -3,6 +3,7 @@
 
 function connectUser(PDO $con, string $userLogin, string $userPwd): bool
 {
+    // requête préparée que sur le login (champ unique)
     $request = $con->prepare("SELECT * FROM `user` WHERE `user_login`= ?");
     try{
         $request->execute([$userLogin]);
@@ -15,7 +16,8 @@ function connectUser(PDO $con, string $userLogin, string $userPwd): bool
         // on va vérifier son mot de passe
         // entre celui passé par le formulaire et celui venant de la DB
         if(password_verify($userPwd,$result['user_pwd'])){
-            // on met en session tout ce qu'on a récupéré de la requête
+            // on met en session tout ce qu'on a été récupéré de la requête
+            // tableau associatif = tableau associatif
             $_SESSION = $result;
 
             // suppression du mot de passe

@@ -1,5 +1,5 @@
 <?php
-# view/connect.html.php
+# view/admin.html.php
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,8 +7,8 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>MVC Create Read C2 | Connexion</title>
-    <meta name="description" content="MVC Create Read C2 | Accueil">
+    <title>MVC Create Read C2 | Administration</title>
+    <meta name="description" content="MVC Create Read C2 | Administration">
     <meta name="keywords" content="">
 
     <!-- Favicons -->
@@ -66,8 +66,8 @@
             <div class="container">
                 <div class="row d-flex justify-content-center text-center">
                     <div class="col-lg-8">
-                        <h1>MVC Create Read C2 | Connexion</h1>
-                        <p class="mb-0">Veuillez vous connecter pour continuer</p>
+                        <h1>MVC Create Read C2 | Administration</h1>
+                        <p class="mb-0">Création d'un nouvel article</p>
                     </div>
                 </div>
             </div>
@@ -89,22 +89,38 @@
                         <div>
                             <?php if(isset($error)): ?>
                             <h3 class="alert alert-danger"><?=$error?></h3>
+                                <?php
+                            elseif(isset($_GET['message'])):
+                                ?>
+                                <h3 class="alert alert-success"><?=$_GET['message']?></h3>
                             <?php
                             endif;
                             ?>
                             <form action="" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                                 <div class="row gy-4">
 
-                                    <div class="col-md-6">
-                                        <input type="text" name="user_login" class="form-control" placeholder="votre login" required>
+                                    <div class="col-md-12">
+                                        <input type="text" name="article_title" class="form-control" placeholder="votre titre" required>
                                     </div>
 
-                                    <div class="col-md-6 ">
-                                        <input type="password" class="form-control" name="user_pwd" placeholder="Votre mot de passe" required>
+                                    <div class="col-md-12">
+                                        <textarea name="article_text" class="form-control" placeholder="votre texte" required></textarea>
                                     </div>
 
+
+
                                     <div class="col-md-6 ">
-                                        <input type="submit" value="Se connecter">
+                                        <input type="checkbox"
+                                               id="public"
+                                               class="form-check-input" name="article_is_published" value="1" > Publié ?
+                                    </div>
+                                    <div class="col-md-6 ">
+                                       Date de publication <input type="datetime-local" class="form-control" name="article_date_published" value="<?=date("Y-m-d\TH:i")?>" >
+
+                                    </div>
+<input type="hidden" name="user_iduser" value="<?=$_SESSION['iduser']?>">
+                                    <div class="col-md-6 ">
+                                        <input type="submit" value="Insérer">
                                     </div>
 
                                 </div>

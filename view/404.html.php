@@ -1,5 +1,5 @@
 <?php
-# view/connect.html.php
+# view/404.html.php
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>MVC Create Read C2 | Connexion</title>
+    <title>MVC Create Read C2 | erreur 404</title>
     <meta name="description" content="MVC Create Read C2 | Accueil">
     <meta name="keywords" content="">
 
@@ -66,58 +66,14 @@
             <div class="container">
                 <div class="row d-flex justify-content-center text-center">
                     <div class="col-lg-8">
-                        <h1>MVC Create Read C2 | Connexion</h1>
-                        <p class="mb-0">Veuillez vous connecter pour continuer</p>
+                        <h1>MVC Create Read C2 | MVC Create Read C2 | erreur 404</h1>
+                        <p class="mb-0">Cette page n'est plus accessible, <a href="./">retour à l'accueil.</a></p>
                     </div>
                 </div>
             </div>
         </div>
 
 </main>
-<div class="container">
-    <div class="row">
-
-        <div class="col-lg-12">
-
-
-            <!-- Blog Posts Section -->
-            <section id="blog-posts" class="blog-posts section">
-
-                <div class="container">
-
-                    <div class="row gy-4">
-                        <div>
-                            <?php if(isset($error)): ?>
-                            <h3 class="alert alert-danger"><?=$error?></h3>
-                            <?php
-                            endif;
-                            ?>
-                            <form action="" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-                                <div class="row gy-4">
-
-                                    <div class="col-md-6">
-                                        <input type="text" name="user_login" class="form-control" placeholder="votre login" required>
-                                    </div>
-
-                                    <div class="col-md-6 ">
-                                        <input type="password" class="form-control" name="user_pwd" placeholder="Votre mot de passe" required>
-                                    </div>
-
-                                    <div class="col-md-6 ">
-                                        <input type="submit" value="Se connecter">
-                                    </div>
-
-                                </div>
-                            </form>
-                        </div><!-- End Contact Form -->
-                        <div class="col-12">
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-</div>
 
 <footer id="footer" class="footer">
 
@@ -141,6 +97,7 @@
 
 <!-- Vendor JS Files -->
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
 <script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>

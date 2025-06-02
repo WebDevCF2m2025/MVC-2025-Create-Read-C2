@@ -27,6 +27,7 @@ try{
 // Chargement de notre routeur
 require_once "../controller/RouterController.php";
 
+echo "<hr><h3>Barre de débogage</h3>";
 echo '<h4>session_id() ou SID</h4>';
 var_dump(session_id());
 echo '<h4>$_GET</h4>';

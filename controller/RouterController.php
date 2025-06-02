@@ -7,7 +7,7 @@ include "../model/UserModel.php";
 // pages communes à private et public
 if(!isset($_GET['p'])){
     // chargement des articles pour l'accueil
-    $articles = getArticles($db);
+    $articles = getArticles($db,true);
     // appel de la vue
     include "../view/homepage.html.php";
 }elseif ($_GET['p']==='about'){
