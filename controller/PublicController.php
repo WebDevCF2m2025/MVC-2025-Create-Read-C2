@@ -1,8 +1,17 @@
 <?php
 # controller/PublicController.php
 
+if(!isset($_GET['p'])){
+    // chargement des articles pour l'accueil
+    $articles = getArticles($db,true);
+    // appel de la vue
+    include "../view/homepage.html.php";
+// page about
+}elseif ($_GET['p']==='about'){
+    // appel de la vue
+    include "../view/about.html.php";
 // nous sommes sur la page de connexion
-if(isset($_GET['p']) && $_GET['p']==="connect"){
+}else if($_GET['p']==="connect"){
 
     // essai de connexion
     if(isset($_POST['user_login'],$_POST['user_pwd'])){
@@ -17,4 +26,6 @@ if(isset($_GET['p']) && $_GET['p']==="connect"){
         $error = "Login et/ou mot de passe incorrecte";
     }
     require_once "../view/connect.html.php";
+}else{
+    include "../view/404.html.php";
 }

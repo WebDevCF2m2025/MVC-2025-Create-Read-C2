@@ -1,9 +1,17 @@
 <?php
 # /controller/PrivateController.php
 
-if(isset($_GET['p'])){
-    // si on veut se déconnecter
-    if($_GET['p']==="disconnect"){
+if(!isset($_GET['p'])){
+    // chargement des articles pour l'accueil
+    $articles = getArticles($db,true);
+    // appel de la vue
+    include "../view/homepage.html.php";
+// page about
+}elseif ($_GET['p']==='about'){
+    // appel de la vue
+    include "../view/about.html.php";
+// nous sommes sur la page de connexion
+}elseif($_GET['p']==="disconnect"){
         disconnectUser();
         header("Location: ./");
         exit();
@@ -23,4 +31,3 @@ if(isset($_GET['p'])){
     }else{
         include "../view/404.html.php";
     }
-}
